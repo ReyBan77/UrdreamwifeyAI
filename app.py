@@ -1,8 +1,6 @@
 import os
 import replicate
-from dotenv import load_dotenv
 import streamlit as st
-import replicate
 from dreamcoin_manager import get_dreamcoin_balance, unlock_nsfw
 
 REPLICATE_API_TOKEN = st.secrets["REPLICATE_API_TOKEN"]
@@ -26,18 +24,20 @@ with st.form("dream_form"):
 
     auto_prompt = f"{style} {gender} with {hairstyle} hair wearing {outfit} in a {scene}"
     st.markdown(f"**Auto-generated Prompt:** `{auto_prompt}`")
-
-    generate = st.form_submit_button("Generate Image 💫")
-
-if generate:
-    coins = get_dreamcoin_balance()
-    if nsfw_toggle and coins < 200:
-        st.error("You need 200 DreamCoins to unlock NSFW mode.")
+if st.form_submit_button("Generate Image 🌟"):
+    if get_dreamcoin_balance() >= 100:  # Optional coin logic
+        with st.spinner("Summoning your waifu..."):
+            try:
+                image_url = generate_waifu(auto_prompt)
+                st.image(image_url)
+            except Exception as e:
+                st.error(f"Failed to generate image: {e}")
     else:
-        if nsfw_toggle:
-            unlock_nsfw()
+        st.warning("Not enough DreamCoins!")
 
-        with st.spinner("Generating your waifu..."):
+  if generate:
+    coins = get_dreamcoin_balance()
+  
             try:
                 image_url = generate_waifu(auto_prompt)
                 st.image(image_url, caption="✨ Your Dream Waifu ✨", use_column_width=True)
