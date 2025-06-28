@@ -7,3 +7,4 @@ def get_dreamcoin_balance():
 def unlock_nsfw():
     print("NSFW mode unlocked (simulation)")
     return True
+    pass
