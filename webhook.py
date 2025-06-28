@@ -1,1 +1,0 @@
-# Stripe webhook to handle transactions
