@@ -24,15 +24,14 @@ with st.form("dream_form"):
 
     auto_prompt = f"{style} {gender} with {hairstyle} hair wearing {outfit} in a {scene}"
     st.markdown(f"**Auto-generated Prompt:** `{auto_prompt}`")
-if st.form_submit_button("Generate Image 🌟"):
-    if get_dreamcoin_balance() >= 100:  # Optional coin logic
-with st.spinner("Summoning your waifu..."):
-    try:
-        image_url = generate_waifu(auto_prompt)
-        st.image(image_url, caption="✨ Your Dream Waifu ✨", use_column_width=True)
-        st.success("Your dream waifu has been generated!")
-except Exception as e:
-        st.error(f"Failed to generate image: {e}")
+if st.form_submit_button("Generate Image 🌟"): if get_dreamcoin_balance() >= 100:  # Optional coin logic
+    with st.spinner("Summoning your waifu..."):
+        try:
+            image_url = generate_waifu(auto_prompt)
+            st.image(image_url, caption="✨ Your Dream Waifu ✨", use_column_width=True)
+            st.success("Your dream waifu has been generated!")
+            except Exception as e:
+            st.error(f"Failed to generate image: {e}")
                 
     else:
         st.warning("Not enough DreamCoins!")
