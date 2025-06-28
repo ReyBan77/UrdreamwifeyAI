@@ -6,7 +6,6 @@ from email_capture import capture_email
 from utils import get_styles
 from email_capture import capture_email
 
-
 st.set_page_config(page_title="URDreamWifeyAI", layout="centered")
 
 st.markdown(get_styles(), unsafe_allow_html=True)
@@ -40,7 +39,7 @@ if generate:
             image_url = f"https://via.placeholder.com/512x512?text={auto_prompt.replace(' ', '+')}"
             st.image(image_url)  # TEMP MOCK
 
-        save_image_to_gallery(auto_prompt)
+        save_image_to_gallery(auto_prompt.encode(), "test_user")
         st.success("Your dream waifu has been generated!")
 
 st.divider()
