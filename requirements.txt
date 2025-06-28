@@ -1,3 +1,0 @@
-streamlit
-replicate
-requests
