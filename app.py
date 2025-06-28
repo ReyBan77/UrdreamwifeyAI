@@ -7,8 +7,8 @@ REPLICATE_API_TOKEN = st.secrets["REPLICATE_API_TOKEN"]
 os.environ["REPLICATE_API_TOKEN"] = REPLICATE_API_TOKEN
 
 def generate_waifu(prompt):
-    model = replicate.models.get("cjwbw/anything-v4.0")
-    version = model.versions.get("f5a17c3d56499899a9c3c0c4fd0bcd87a4b96b4c16f0fdfcda4e9b9c1ab36a5d")
+    model = replicate.models.get("fofr/realistic-vision-v5")
+    version = model.versions.get("5f8fbe1c794607d1797b4cfcb7911f0e98cbe44e3d9b4e60e90cc3a3ef8e3d4b")
     output = version.predict(prompt=prompt, width=512, height=512, num_outputs=1)
     return output[0]
 
