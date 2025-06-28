@@ -38,11 +38,11 @@ if st.form_submit_button("Generate Image 🌟"):
 if generate:
     coins = get_dreamcoin_balance()
   
-        try:
-                image_url = generate_waifu(auto_prompt)
-                st.image(image_url, caption="✨ Your Dream Waifu ✨", use_column_width=True)
-                st.success("Your dream waifu has been generated!")
-            except Exception as e:
-                st.error(f"Failed to generate image: {e}")
+    try:
+        mage_url = generate_waifu(auto_prompt)
+        st.image(image_url, caption="✨ Your Dream Waifu ✨", use_column_width=True)
+        st.success("Your dream waifu has been generated!")
+        except Exception as e:
+        st.error(f"Failed to generate image: {e}")
 
     st.markdown(f"💰 **DreamCoins Balance:** `{coins}`")
