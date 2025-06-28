@@ -1,6 +1,10 @@
+# email_capture.py
 
-def capture_email(email, storage):
-    if "@" in email:
-        storage.append(email)
-        return True
-    return False
+import streamlit as st
+
+def capture_email():
+    email = st.text_input("📧 Enter your email to get updates:")
+    if email:
+        st.success(f"Thanks! Updates will be sent to {email}")
+
+
