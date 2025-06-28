@@ -35,7 +35,7 @@ if st.form_submit_button("Generate Image 🌟"):
     else:
         st.warning("Not enough DreamCoins!")
 
-  if generate:
+if generate:
     coins = get_dreamcoin_balance()
   
             try:
