@@ -4,6 +4,8 @@ from gallery import save_image_to_gallery
 from dreamcoin_manager import get_dreamcoin_balance, unlock_nsfw
 from email_capture import capture_email
 from utils import get_styles
+from email_capture import capture_email
+
 
 st.set_page_config(page_title="URDreamWifeyAI", layout="centered")
 
