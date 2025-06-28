@@ -2,10 +2,10 @@ import os
 import replicate
 from dotenv import load_dotenv
 import streamlit as st
+import replicate
 from dreamcoin_manager import get_dreamcoin_balance, unlock_nsfw
 
-load_dotenv()
-REPLICATE_API_TOKEN = os.getenv("REPLICATE_API_TOKEN")
+REPLICATE_API_TOKEN = st.secrets["REPLICATE_API_TOKEN"]
 os.environ["REPLICATE_API_TOKEN"] = REPLICATE_API_TOKEN
 
 def generate_waifu(prompt):
