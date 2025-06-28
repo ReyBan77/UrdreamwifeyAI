@@ -1,0 +1,1 @@
+# Capture emails before image generation

@@ -1,0 +1,1 @@
+# Use AI to build smarter waifu prompts
